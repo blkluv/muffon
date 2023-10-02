@@ -1,16 +1,12 @@
 <template>
-  <div
-    v-if="albumTitle"
-  >
-    <small>
-      <BaseAlbumLinkContainer
-        class="main-link"
-        :album-data="albumData"
-        :artist-name="artistName"
-      >
-        {{ albumTitle }}
-      </BaseAlbumLinkContainer>
-    </small>
+  <div class="description">
+    <BaseAlbumLinkContainer
+      class="main-link"
+      :album-data="albumData"
+      :artist-name="artistName"
+    >
+      {{ albumTitle }}
+    </BaseAlbumLinkContainer>
   </div>
 </template>
 

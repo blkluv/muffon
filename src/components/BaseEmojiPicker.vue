@@ -73,11 +73,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.base-emoji-picker
-  :deep(em-emoji-picker)
-    @extend .border-radius
-    max-height: 300px
-    --font-family: inherit
-    --rgb-background: transparent !important
-</style>
+<style lang="sass" scoped></style>

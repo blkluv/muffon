@@ -1,29 +1,25 @@
 <template>
   <BaseSegmentContainer
-    class="main-segment-container"
+    class="d-flex height-100 no-margin no-border-radius content-segment"
     :is-change-transparency="false"
   >
-    <div class="left-column">
-      <BaseImage
-        class="main-logo-image"
-        :image="logo"
-        is-plain
-      />
+    <div>
+      <BaseLogoImage />
     </div>
 
-    <div class="right-column">
+    <div class="main-right-column">
       <BaseHeader
         tag="h2"
         :text="name"
       />
 
-      <div class="version-section">
+      <div class="main-bottom-extrasmall-section">
         <strong
           v-text="version"
         />
       </div>
 
-      <div class="copyright-license-section">
+      <div class="main-bottom-extrasmall-section">
         <div>
           <small
             v-text="copyrightText"
@@ -40,7 +36,7 @@
       <BaseDivider />
 
       <div>
-        <div class="link-section">
+        <div class="main-link-section">
           <strong
             class="main-link"
             @click="handleHomepageLinkClick"
@@ -48,7 +44,7 @@
           />
         </div>
 
-        <div class="link-section">
+        <div class="main-link-section">
           <strong
             class="main-link"
             @click="handleDonateLinkClick"
@@ -56,7 +52,7 @@
           />
         </div>
 
-        <div class="link-section">
+        <div class="main-link-section">
           <strong
             class="main-link"
             @click="handleContactLinkClick"
@@ -74,7 +70,7 @@ import {
 } from 'electron'
 import BaseSegmentContainer
   from '@/components/containers/segments/BaseSegmentContainer.vue'
-import BaseImage from '@/components/images/BaseImage.vue'
+import BaseLogoImage from '@/components/images/BaseLogoImage.vue'
 import BaseHeader from '@/components/BaseHeader.vue'
 import BaseDivider from '@/components/BaseDivider.vue'
 import logo from '@/assets/images/logo_sm.png'
@@ -93,7 +89,7 @@ export default {
   name: 'MainPage',
   components: {
     BaseSegmentContainer,
-    BaseImage,
+    BaseLogoImage,
     BaseHeader,
     BaseDivider
   },
@@ -168,35 +164,6 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.main-segment-container
-  @extend .d-flex, .h-100, .no-margin, .no-border-radius
-  padding: 2em 3em
-
-.left-column
-  width: 80px
-[dir="ltr"]
-  .left-column
-    margin-right: 1.5em
-[dir="rtl"]
-  .left-column
-    margin-left: 1.5em
-
-.right-column
-  @extend .flex-full
-
-.version-section
-  margin-top: 0.5em
-
-.copyright-license-section
-  margin-top: 0.5em
-
-.link-section
-  @extend .d-inline-block
-  margin-bottom: 0.25em
-[dir="ltr"]
-  .link-section
-    margin-right: 1.25em
-[dir="rtl"]
-  .link-section
-    margin-left: 1.25em
+.content-segment
+  padding: 3rem 4.5rem !important
 </style>
